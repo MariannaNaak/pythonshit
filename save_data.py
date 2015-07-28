@@ -30,7 +30,7 @@ data["features"][99]["attributes"]["Spielplatzname"]
 
 Das heisst, dass die Spielplaetze über den Index von features aufgerufen werden.
 """
-print data["features"][11]["attributes"]["Bemerkung"]
+
 #Liste der Key von jedem Spielplatz, einfach zur uebersicht
 output_file = codecs.open("outfiles/keys.txt", "w")
 
@@ -44,20 +44,24 @@ Unsere ausgewaehlten Felder sind:
 Spielplatzname, Stadtteil, Stadtbezirk, Stadtviertel, Typ, Basketballkoerbe, Fussballtore, Skaterelemente, Tischtennisplatten,Torwand, Bemerkung
 """""""""
 
+#Anzahl Spielplaetze
+courts = len(data["features"])
+i = 0
+
+#Listen zum Speichern der Eintraege
+spielplatzname = []
+stadtteil = []
+stadtbezirk = []
+
+while i < courts:
+     spielplatzname.append(data["features"][i]["attributes"]["Spielplatzname"])
+     
+     i = i+1
 
 
+bla = codecs.open("outfiles/bla.txt", "w",encoding="utf-8")
+for item in spielplatzname:
+  bla.write("%s\n" % item)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+bla.close()
 

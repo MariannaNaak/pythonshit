@@ -9,11 +9,11 @@ url = "http://geoportal1.stadt-koeln.de/ArcGIS/rest/services/Spielangebote/MapSe
 response = urllib.urlopen(url);
 output_file = codecs.open("outfiles/playgrounds.json", "w", encoding="utf-8")
 
-print "Daten werden heruntergeladen"
+print ("Daten werden heruntergeladen")
 
 data = json.loads(response.read().decode("utf-8-sig"))
-print "Daten erfolgreich heruntergeladen\n\n\n\n"
+print ("Daten erfolgreich heruntergeladen\n\n\n\n")
 
 json.dump(data, output_file, indent=4, ensure_ascii=False)
-print "Daten erfolgreich gespeichert"
+print ("Daten erfolgreich gespeichert")
 
