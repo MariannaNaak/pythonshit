@@ -32,30 +32,33 @@ class User(UserMixin, Base):
         return '<%s(%r, %r)>' % (self.__class__.__name__, self.id, self.username)
 
 class Fahrt(Base):
-    __tablename__ = 'fahrten'
-    id = Column(Integer, primary_key=True)
-    driver = Column(Text, nullable=False)
-    abfahrtdatum = Column(Text, nullable=False)
-    abfahrtzeit = Column(Text, nullable=False)
-    ankunftdatum = Column(Text, nullable=False)
-    ankunftzeit = Column(Text, nullable=False)
-    startort = Column(Text, nullable=False)
-    zielort = Column(Text, nullable=False)
-    reisezweck = Column(Text, nullable=False)
-    autokennzeichen = Column(Text, nullable=False)
-    kilometerstand = Column(Text, nullable=False)
+    __tablename__ = 'daten'
     
-    def __init__(self, driver=None, abfahrtdatum=None, abfahrtzeit=None, ankunftdatum=None,ankunftzeit=None, startort=None, zielort=None,reisezweck=None, autokennzeichen=None, kilometerstand=None,):
-        self.driver = driver
-        self.abfahrtdatum = abfahrtdatum
-        self.abfahrtzeit = abfahrtzeit
-        self.ankunftdatum = ankunftdatum
-        self.ankunftzeit = ankunftzeit
-        self.startort = startort
-        self.zielort = zielort
-        self.reisezweck = reisezweck
-        self.autokennzeichen = autokennzeichen
-        self.kilometerstand = kilometerstand
+    id = Column(Integer, primary_key=True)
+    Spielplatzname = Column(Text, nullable=False)
+    Stadtteil = Column(Text, nullable=False)
+    Stadtbezirk = Column(Text, nullable=False)
+    Stadtviertel = Column(Text, nullable=False)
+    Typ = Column(Text, nullable=False)
+    Basketballkoerbe = Column(Text, nullable=False)
+    Fussballtore = Column(Text, nullable=False)
+    Skaterelemente = Column(Text, nullable=False)
+    Tischtennisplatten = Column(Text, nullable=False)
+    Torwand = Column(Text, nullable=False)
+    Bemerkung = Column(Text, nullable=False)
+    
+    def __init__(self, Spielplatzname=None, Stadtteil=None, Stadtbezirk=None, Stadtviertel=None,Typ=None, Basketballkoerbe=None, Fussballtore=None,Skaterelemente=None, Tischtennisplatten=None, Torwand=None, Bemerkung=None):
+        self.Spielplatzname = Spielplatzname
+        self.Stadtteil = Stadtteil
+        self.Stadtbezirk = Stadtbezirk
+        self.Stadtviertel = Stadtviertel
+        self.Typ = Typ
+        self.Basketballkoerbe = Basketballkoerbe
+        self.Fussballtore = Fussballtore
+        self.Skaterelemente = Skaterelemente
+        self.Tischtennisplatten = Tischtennisplatten
+        self.Torwand = Torwand
+        self.Bemerkung = Bemerkung
                 
     def __repr__(self):
-        return '<%s(%r, %r, %r,%r, %r,%r, %r,%r, %r,%r )>' % (self.__class__.__name__, self.id, self.driver, self.abfahrtdatum, self.abfahrtzeit, self.ankunftdatum, self.ankunftzeit, self.startort, self.zielort, self.reisezweck, self.autokennzeichen, self.kilometerstand)
+        return '<%s(%r, %r, %r,%r, %r,%r, %r,%r, %r,%r,%r )>' % (self.__class__.__name__, self.id, self.Spielplatzname, self.Stadtteil, self.Stadtbezirk, self.Stadtviertel, self.Typ, self.Basketballkoerbe, self.Fussballtore, self.Skaterelemente, self.Tischtennisplatten, self.Torwand, self.Bemerkung)
